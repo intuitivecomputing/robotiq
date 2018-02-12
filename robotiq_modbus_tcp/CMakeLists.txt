@@ -1,6 +1,7 @@
 # http://ros.org/doc/groovy/api/catkin/html/user_guide/supposed.html
 cmake_minimum_required(VERSION 2.8.3)
 project(robotiq_modbus_tcp)
+add_compile_options(-std=c++11)
 find_package(catkin REQUIRED COMPONENTS rospy)
 
 #set the default path for built executables to the "bin" directory

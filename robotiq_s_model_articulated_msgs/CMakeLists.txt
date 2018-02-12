@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(robotiq_s_model_articulated_msgs)
-
+add_compile_options(-std=c++11)
 find_package(catkin REQUIRED COMPONENTS std_msgs message_generation )
 
 add_message_files(
