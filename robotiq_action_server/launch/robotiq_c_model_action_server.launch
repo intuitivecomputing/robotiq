@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 
 <launch>
-  <arg name="gripper_name" default="gripper" />
+  <arg name="gripper_name" default="gripper_controller" />
   <arg name="min_gap" default="-0.017" />
-  <arg name="max_gap" default="0.085" /> <!-- meters -->
+  <arg name="max_gap" default="0.140" /> <!-- meters -->
   <arg name="min_effort" default="30.0" />
   <arg name="max_effort" default="100.0" />
 
@@ -15,8 +15,10 @@
     <param name="min_effort" type="double" value="$(arg min_effort)" />
     <param name="max_effort" type="double" value="$(arg max_effort)" />
 
-    <remap from="input" to="$(arg gripper_name)/input" />
-    <remap from="output" to="$(arg gripper_name)/output" />
+    <!--remap from="input" to="$(arg gripper_name)/input" />
+    <remap from="output" to="$(arg gripper_name)/output" /-->
+    <remap from="input" to="CModelRobotInput" />
+    <remap from="output" to="CModelRobotOutput" />
   </node>
 
 </launch>
