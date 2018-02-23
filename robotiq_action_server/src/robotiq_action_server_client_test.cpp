@@ -23,7 +23,7 @@ int main (int argc, char **argv)
   ROS_INFO("Action server started, sending goal.");
   // send a goal to the action
   control_msgs::GripperCommandGoal goal;
-  goal.command.position = 0.1;
+  goal.command.position = 0.14;
   goal.command.max_effort = 100.0;
   ac.sendGoal(goal);
 
