@@ -10,7 +10,9 @@ int main (int argc, char **argv)
   ros::NodeHandle pnh("~");
 
   std::string gripper_name;
-  pnh.param<std::string>("gripper_name", gripper_name, "gripper");
+  double position;
+  pnh.param<std::string>("gripper_name", gripper_name, "icl_phri_gripper/gripper_controller");
+  pnh.param<double>("position", position, 0.14);
 
   // create the action client
   // true causes the client to spin its own thread
@@ -23,12 +25,12 @@ int main (int argc, char **argv)
   ROS_INFO("Action server started, sending goal.");
   // send a goal to the action
   control_msgs::GripperCommandGoal goal;
-  goal.command.position = 0.14;
+  goal.command.position = position;
   goal.command.max_effort = 100.0;
   ac.sendGoal(goal);
 
   //wait for the action to return
-  bool finished_before_timeout = ac.waitForResult(ros::Duration(30.0));
+  bool finished_before_timeout = ac.waitForResult(ros::Duration(5.0));
 
   if (finished_before_timeout)
   {
