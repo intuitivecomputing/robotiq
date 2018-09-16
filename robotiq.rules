@@ -1,3 +1,3 @@
-SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6015", ATTRS{serial}=="DAT29SS", SYMLINK+="robotiq_gripper"
-SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6015", ATTRS{serial}=="DAT1YA5", SYMLINK+="robotiq_fts"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6015", ATTRS{serial}=="DAT29SS", SYMLINK+="robotiq_gripper", MODE="0666"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6015", ATTRS{serial}=="DAT1YA5", SYMLINK+="robotiq_fts", MODE="0666"
 
