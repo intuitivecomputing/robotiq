@@ -12,3 +12,7 @@ This repo holds source code for all versions > groovy. For those versions <= gro
 [ROS wiki]: http://ros.org/wiki/robotiq
 [SVN repo]: https://code.google.com/p/swri-ros-pkg/source/browse
 
+
+### Add udev rules for robotiqs
+`sudo cp ./robotiq.rules /etc/udev/rules.d/robotiq.rules`
+`sudo udevadm control --reload-rules`
